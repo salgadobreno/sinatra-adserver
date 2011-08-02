@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title><%= @title %></title>
+    <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css" media="screen, projection" />
+  </head>
+  <body>
+    <% if authorized? %>
+      <div id="nav">
+        <a href="/list">List</a> |
+        <a href="/new">New</a>
+      </div>
+    <% end %>
+    <%= yield %>
+
+    <div id="debug">
+      <p>Time: <%= Time.now %></p>
+      <p>Sinatra version: <%= Sinatra::VERSION %></p>
+    </div>
+  </body>
+</html>
+

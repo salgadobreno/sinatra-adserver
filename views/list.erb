@@ -1,0 +1,15 @@
+<h1><%= @title %></h1>
+
+<table border="0" cellpadding="0" cellspacing="10" class="list">
+  <% @ads.each_with_index do |ad,i| %>
+    <tr <%= "class='alt'" if i%2==0 %>>
+      <td>
+        <a href="/show/<%= ad.id %>"><%= ad.title %></a>
+      </td>
+      <td><%= ad.clicks.size %></td>
+      <td>
+        <a href="/delete/<%= ad.id %>">delete</a>
+      </td>
+    </tr>
+  <% end %>
+</table>
